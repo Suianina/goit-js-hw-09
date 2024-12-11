@@ -66,24 +66,34 @@ const images = [
     },
   ];
 
-  import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from "simplelightbox";
 
-    const gallery = document.querySelector('.gallery');
-    const listGallery = images.map(({ preview, description, original }) => `
-      <li class="gallery-item">
-        <a class="gallery-link" href="${original}">
-          <img class="gallery-image" src="${preview}" data-source="${original}" alt="${description}">
-        </a>
-      </li>`
-    ).join("");
-    gallery.insertAdjacentHTML('beforeend', listGallery);
+const gallery = document.querySelector('.gallery');
 
-  let lightbox = new SimpleLightbox('.gallery a',{
-    captionDelay: 250,
-    captionsData: "alt",
-    scrollZoom:	false,
-    overlayOpacity:	0.8
-  });
+const listGallery = images
+  .map(({ preview, description, original }) => `
+    <li class="gallery-item">
+      <a class="gallery-link" href="${original}">
+        <img
+          class="gallery-image"
+          src="${preview}"
+          data-source="${original}"
+          alt="${description}"
+        />
+      </a>
+    </li>
+  `)
+  .join("");
+
+gallery.insertAdjacentHTML('beforeend', listGallery);
+
+let lightbox = new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionsData: "alt",
+  scrollZoom: false,
+  overlayOpacity: 0.8,
+});
 
 lightbox.on('show.simplelightbox', function () {
-})
+});
+
