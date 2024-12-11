@@ -1,3 +1,5 @@
+`use strict`;
+
 const formData = {
     email: "", message: "",
 
@@ -21,41 +23,37 @@ function formInput(event) {
             break;
     }
 }
+
 function getValueOfLocalStorage() {
     const localData = JSON.parse(localStorage.getItem(STORAGE_KEY));
     if (localData !== null) {
         formData.setData(localData.email, localData.message)
         form.email.value = localData.email;
-        form.message.value = localData.message;
-      
-       
-        
+        form.message.value = localData.message;   
     }
 }
 getValueOfLocalStorage();
-
-
 
 form.addEventListener("submit", formSubmit)
 function formSubmit(event) {
     event.preventDefault()
     if (
         formData.email === "" || formData.message === "") {
-        return alert("Fill please all fields")
-        
-       
+        return alert("Fill please all fields") 
     }
+
     console.table(formData);
     formData.setData("", "");
     localStorage.removeItem(STORAGE_KEY);
-    form.reset();
-       
+    form.reset();    
 }
+
 function onSubmit(event) {
   event.preventDefault();
   if (formData.email === "" || formData.message === "") {
     return alert("Fill please all fields");
-  }
+    }
+    
   console.table(formData);
   localStorage.removeItem(STORAGE_KEY);
   formMessage.reset();

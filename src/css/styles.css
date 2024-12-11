@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .gallery {
   list-style: none;
   width: 1128px;
@@ -13,12 +14,14 @@ body {
   gap: 24px;
   margin: 0 auto;
 }
+
 .gallery-image {
   display: block;
   width: calc((100% - 24 * 2) / 3);
   height: 200px;
   transition: transform 0.3s ease-in;
 }
+
 .gallery-link:hover > .gallery-image {
   transform: scale(1.05);
 }
@@ -26,11 +29,11 @@ body {
 .sl-overlay{
   background-color: #2E2F42;
 }
+
 .sl-wrapper .sl-navigation button, .sl-wrapper .sl-close,
 .sl-wrapper .sl-counter  {
   color: #fff;
 }
-
 
 .feedback-form {
   width: 408px;

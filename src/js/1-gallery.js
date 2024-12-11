@@ -1,3 +1,5 @@
+`use strict`;
+
 const images = [
     {
       preview:
@@ -76,13 +78,12 @@ const images = [
     ).join("");
     gallery.insertAdjacentHTML('beforeend', listGallery);
 
-    
   let lightbox = new SimpleLightbox('.gallery a',{
     captionDelay: 250,
     captionsData: "alt",
     scrollZoom:	false,
     overlayOpacity:	0.8
-});
+  });
+
 lightbox.on('show.simplelightbox', function () {
-  
 })
