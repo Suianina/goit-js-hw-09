@@ -1,6 +1,5 @@
 @import url(../../node_modules/simplelightbox/dist/simple-lightbox.min.css);
 
-
 body {
   margin: 0;
   padding: 0;
@@ -100,3 +99,9 @@ body {
   letter-spacing: 0.04em;
 }
   
+
+
+
+.nav-link::after {
+  content: "";
+}
